@@ -11,27 +11,27 @@ int dado() {
 }
 
 int maior(int num1, int num2, int num3) {
-    if (num1 > num2 && num1 > num3) {
+    if (num1 >= num2 && num1 >= num3) {
         return num1;
     }
-    if (num2 > num1 && num2 > num3) {
+    if (num2 >= num1 && num2 >= num3) {
         return num2;
     }
     return num3;
 }
 
 int menor(int num1, int num2, int num3) {
-    if (num1 < num2 && num1 < num3) {
+    if (num1 <= num2 && num1 <= num3) {
         return num1;
     }
-    if (num2 < num1 && num2 < num3) {
+    if (num2 <= num1 && num2 <= num3) {
         return num2;
     }
     return num3;
 }
 
 int iguais(int num1, int num2, int num3) {
-    if (num1 == num2 && num3) {
+    if (num1 == num2 && num2 == num3) {
         return 1;
     }
     return 0;
@@ -47,9 +47,10 @@ int main() {
            "2 - Comparação de 3 n°s inteiros\n");
     scanf("%d", &escolha);
 
+    srand(time(NULL)); // chamada da função do dado alterada para fora do switch case
+
     switch (escolha) {
         case 1: {
-            srand(time(NULL)); // chamada da função do dado
             printf("Quantas vezes você quer rolar o dado?\n");
             scanf("%d", &rolagem);
 
